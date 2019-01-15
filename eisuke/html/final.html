@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!--jquery読み込む-->
+    <script src="../javascript/jquery-3.3.1.js"></script>
+    <!--スライドショー-->
+    <!--海っぽく？-->
+    <script src="../javascript/slide.js"></script>
+    <style type="text/css">
+        .box2 {
+            padding: 0.5em 1em;
+            margin: 2em 0;
+            color: #474747;
+            background: #5FB404;
+            /*背景色*/
+            border-left: double 18px #ECF6CE;
+            /*左線*/
+            border-right: double 18px #ECF6CE;
+            /*右線*/
+        }
+
+        .box2 p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1 {
+            padding: 8px 19px;
+            margin: 2em 0;
+            color: #;
+            background: #f0e68c;
+            border-top: solid 5px #ffd700;
+            border-bottom: solid 5px #ffd700;
+        }
+
+        .box1 p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 20px;
+            /*body外側の余白を指定*/
+            padding: 0px 10px 50px 10px;
+            /*bodyの内側余白を指定する(上:右:下:左)*/
+        }
+
+        #slideshow {
+            position: relative;
+            width: 640px;
+            height: 270px;
+        }
+
+        #slideshow img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 8;
+            opacity: 0.0;
+        }
+
+        #slideshow img.active {
+            z-index: 10;
+            opacity: 1.0;
+        }
+
+        #slideshow img.last-active {
+            z-index: 9;
+        }
+
+        body {
+            background: linear-gradient(#81F7F3, #FFFFFF);
+        }
+
+    </style>
+    <!--スマホレスポンシブ対応-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--相性判定-->
+    <script src="../javascript/joke.js"></script>
+    <!--repeat-->
+    <script src="../javascript/repeat.js"></script>
+    <!--タイトル-->
+    <title>江ノ島紹介！</title>
+</head>
+
+<body>
+    <header>
+        <h1>江ノ島観光</h1>
+    </header>
+    <!--google検索の場所-->
+    <br>
+    <form method=get action="http://www.google.co.jp/search">
+
+        <a href="http://www.google.co.jp/">
+        </a>
+        <input type=text name=q value="江ノ島　観光">
+
+        <input type=submit value="Google 検索">
+    </form>
+    <!-- Google終了 --><br>
+    <p id="slideshow">
+        <!--スライドショー-->
+        <img src="../img/photo1.jpg" class="active">
+        <img src="../img/photo2.jpg">
+        <img src="../img/photo3.jpg">
+        <img src="../img/photo4.jpg">
+        <img src="../img/photo5.jpg">
+    </p>
+    <!--google検索の場所-->
+    <!--マッシュアップ/ツイッターフォローボタン-->
+    <div class="box1">観光したい方のページ
+        <br>
+        <a href="http://www.fujisawa-kanko.jp/">江ノ島公式ホームページ</a><br>
+        <a href="http://www.enosui.com/">江ノ島水族館ホームページ</a>
+    </div>
+    <div class="box2">
+        <a href="https://www.enoden.co.jp/">江ノ電ホームページ</a>
+    </div><br>
+    <h3>江ノ島とは</h3>
+    神奈川県南部にある湘南地域で最も有名な観光地です。面積：0.41 km²　標高：60 mと小さな島ですが、とても美しいです。対岸とは橋で繋がっていて、車でも徒歩でも簡単に渡ることができ、古くから参詣・遊山の地として、現在はオシャレなお店もたくさんある観光地として人気のスポットです。
+    <br>江の島へのアクセスは、小田急の「片瀬江ノ島駅」の方が少し近いです。でもおススメは江ノ電です。藤沢駅または鎌倉駅などから「江ノ島駅」まで乗りましょう。レトロな駅舎や車両、車窓に映る四季折々の自然や街並み、どれをとっても江の島観光の気分を盛り上げてくれますよ。<br>
+    <h3>今日は江ノ島日和？</h3>
+    <br>好きな数を0から10で入れよう！
+    <input type="text" id="num">
+    <input type="button" value="判定" onclick="judge(num.value)">
+    <div id="kekka">　</div>
+    <br>万一ウイルスソフトを使っていてこのサイトが正常に表示されない場合、こちらのボタンを押してください。7以下の奇数をアラートで出します
+    <button onclick="kurikaeshi()">チェックボタン</button>
+</body>
+
+</html>
